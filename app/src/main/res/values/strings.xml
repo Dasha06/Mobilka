@@ -20,4 +20,6 @@
     <string name="ForgotPassword">Забыл Пароль</string>
     <string name="Forgot_pass_subtitle">Введите свою учетную запись для сброса</string>
     <string name="forgot_pass_send">Отправить</string>
+    <string name="pop_up_message">Мы отправили код восстановления пароля на вашу электронную почту.</string>
+    <string name="pop_up_check_email">Проверьте Ваш Email</string>
 </resources>
