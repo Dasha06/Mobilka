@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.composable
+import com.example.matuletest.ui.screen.OTRVerification.OTRVerificationScreen
 import com.example.matuletest.ui.screen.forgotPassword.ForgotPassScreen
 import com.example.matuletest.ui.screen.registration.SignUpScreen
 import com.example.matuletest.ui.screen.signIn.SignInScreen
@@ -20,7 +21,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             MatuleTheme {
                 val navController = rememberNavController()
-//                val dataStore = DataStoreOnBoarding(LocalContext.current)
 
                 NavHost(
                     navController = navController,
@@ -48,6 +48,10 @@ class MainActivity : ComponentActivity() {
                             onNavigateToSignInScreen = { navController.popBackStack() },
                             navController = navController
                         )
+                    }
+
+                    composable(Screen.Verification.route) {
+                        OTRVerificationScreen(navController = navController)
                     }
                 }
             }

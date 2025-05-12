@@ -71,6 +71,7 @@ fun ForgotPassScreen(
     if (showDialog.value) {
         PopUpScreen(
             onDismiss = { showDialog.value = false },
+            navController = navController
         )
     }
 }
@@ -116,10 +117,12 @@ fun ForgotPassContent(
 @Composable
 fun PopUpScreen(
     onDismiss: () -> Unit,
+    navController: NavController
     ) {
     LaunchedEffect(Unit) {
         delay(10000L)
         onDismiss()
+        navController.navigate(Screen.Verification.route)
     }
 
     AlertDialog(
