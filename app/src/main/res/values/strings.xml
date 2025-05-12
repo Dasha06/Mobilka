@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MatuleSample</string>
+    <string name="hello">Привет!</string>
+    <string name="sign_in_subtitile">Заполните Свои данные или продолжите через социальные медиа</string>
+    <string name="template_email">xyz@gmail.com</string>
+    <string name="email">Email</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_up">Вы впервые? Создать пользователя</string>
+    <string name="uncorrect_email">Неправильная почта</string>
+    <string name="password_template">***********</string>
+    <string name="uncorrtect_password">Неправильный пароль</string>
+    <string name="password">Пароль</string>
+    <string name="registration">Регистрация</string>
+    <string name="Error_name">Данное имя уже есть</string>
+    <string name="template_name">хххххххх</string>
+    <string name="name">Ваше имя</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="reg_sign_in">Есть аккаунт? Войти</string>
+    <string name="Agreement_on_sharing_personal_info">Даю согласие на обработку персональных данных</string>
+    <string name="ForgotPassword">Забыл Пароль</string>
+    <string name="Forgot_pass_subtitle">Введите свою учетную запись для сброса</string>
+</resources>
