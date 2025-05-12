@@ -19,4 +19,5 @@
     <string name="Agreement_on_sharing_personal_info">Даю согласие на обработку персональных данных</string>
     <string name="ForgotPassword">Забыл Пароль</string>
     <string name="Forgot_pass_subtitle">Введите свою учетную запись для сброса</string>
+    <string name="forgot_pass_send">Отправить</string>
 </resources>

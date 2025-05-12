@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -18,6 +19,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.matuletest.R
+import com.example.matuletest.ui.screen.forgotPassword.component.ForgotPassButton
+import com.example.matuletest.ui.screen.forgotPassword.component.ForgotPassTextField
 import com.example.matuletest.ui.screen.forgotPassword.component.TitleWithSubtitleText
 
 @Composable
@@ -26,6 +29,7 @@ fun ForgotPassScreen(
     navController: NavController
 )
 {
+    val forgotPassViewModel: ForgotPassViewModel = ForgotPassViewModel()
     Scaffold(
         topBar = {
             Row(
@@ -44,14 +48,18 @@ fun ForgotPassScreen(
     ){paddingValues ->
         ForgotPassContent(
             paddingValues,
+            forgotPassViewModel
             )
 
     }
 }
 
 @Composable
-fun ForgotPassContent(paddingValues: PaddingValues)
-{
+fun ForgotPassContent(
+    paddingValues: PaddingValues,
+    forgotPassViewModel: ForgotPassViewModel
+    ) {
+    val forgotPassState = forgotPassViewModel.forgotPassState
     Column(
         modifier = Modifier.padding(paddingValues = paddingValues),
         verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -60,6 +68,25 @@ fun ForgotPassContent(paddingValues: PaddingValues)
             title = stringResource(R.string.ForgotPassword),
             subTitle = stringResource(R.string.Forgot_pass_subtitle)
         )
+        ForgotPassTextField(
+            value = forgotPassState.value.email,
+            onChangeValue = {
+                forgotPassViewModel.setEmail(it)
+            },
+            isError = forgotPassViewModel.emailHasError.value,
+            placeholder = {
+                Text(text = stringResource(R.string.template_email))
+            },
+            supportingText = {
+                Text(text = stringResource(R.string.uncorrect_email))
+            },
+            label = {
+                Text(text = stringResource(R.string.email))
+            }
+        )
 
+        ForgotPassButton(onClick = {}) {
+            Text(text = stringResource(R.string.forgot_pass_send))
+        }
     }
 }

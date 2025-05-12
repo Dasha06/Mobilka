@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.example.matuletest.common.CommonTextField
 
 @Composable
-fun AuthTextField(
+fun ForgotPassTextField(
     value: String,
     onChangeValue: (String) -> Unit,
     isError: Boolean,
